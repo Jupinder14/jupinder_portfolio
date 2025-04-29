@@ -78,6 +78,31 @@ nav {
   z-index: 2;
 }
 
+.hero .container h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 15px;
+}
+
+.hero .container h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: #00bcd4;
+}
+
+.hero .container p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  color: #bbb;
+}
+
 .hero h1 {
   font-size: 3rem;
   margin-bottom: 20px;
