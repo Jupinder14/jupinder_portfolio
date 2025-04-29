@@ -43,31 +43,91 @@
   <div class="container">
     <h2 data-aos="fade-up">Projects</h2>
     <div class="project-grid">
-      <div class="project-card" data-aos="zoom-in">
-        <h3>Selenium with Python and Behave (BDD)</h3>
-        <p></p>
-        <a href="https://github.com/Jupinder14/python-behave" target="_blank">View details</a>
+      
+      <div class="project-card" onclick="openModal('modal1')">
+        <h3>E2E testing using Selenium and Behave (Python)</h3>
       </div>
-      <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
-        <h3>Cypress with JavaScript and cucumber (BDD)</h3>
-        <p></p>
-        <a href="https://github.com/Jupinder14/cypress-cucumber-automation" target="_blank">View details</a>
+
+      <div class="project-card" onclick="openModal('modal2')">
+        <h3>E2E testing using Cypress and Cucumber (JavaScript)</h3>
       </div>
-      <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
-        <h3>Nightwatch with JavaScript and cucumber (BDD)</h3>
-        <p></p>
-        <a href="https://github.com/Jupinder14/nightwatch-cucumber" target="_blank">View details</a>
+
+      <div class="project-card" onclick="openModal('modal3')">
+        <h3>E2E testing using Nightwatch and Cucumber (JavaScript)</h3>
       </div>
+
+      <div class="project-card" onclick="openModal('modal4')">
+        <h3>E2E testing using Selenium and Pytest (Python)</h3>
+      </div>
+
+      <div class="project-card" onclick="openModal('modal5')">
+        <h3>Load testing using K6 (JavaScript)</h3>
+      </div>
+
     </div>
   </div>
+
+  <!-- Modals -->
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal1')">&times;</span>
+      <h2>Selenium with Python and Behave</h2>
+      <p>This project contains automated tests for a carbohydrate calculator web app using Selenium and Python.</p>
+      <p>Framework used: <strong>Behave (BDD)</strong></p>
+      <p><strong>GitHub Actions</strong> pipeline is also set up for this project.</p>
+      <a href="https://github.com/Jupinder14/python-behave" class="btn" target="_blank">View on GitHub</a>
+    </div>    
+  </div>
+
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal2')">&times;</span>
+      <h2>Cypress with JavaScript and Cucumber</h2>
+      <p>This project contains automated tests for a carbohydrate calculator web app using Cypress and JavaScript.</p>
+      <p><strong>GitHub Actions</strong> pipeline is also set up for this project.</p>
+      <a href="https://github.com/Jupinder14/cypress-cucumber-automation" class="btn" target="_blank">View on GitHub</a>
+    </div>
+  </div>
+
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal3')">&times;</span>
+      <h2>Nightwatch with JavaScript and Cucumber</h2>
+      <p>This project contains automated tests for a carbohydrate calculator web app using Nightwatch and JavaScript.</p>
+      <p><strong>GitHub Actions</strong> pipeline is also set up for this project.</p>
+      <a href="https://github.com/Jupinder14/nightwatch-cucumber" class="btn" target="_blank">View on GitHub</a>
+    </div>
+  </div>
+
+  <div id="modal4" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal4')">&times;</span>
+      <h2>Selenium with pytest</h2>
+      <p>This project contains automated tests for a carbohydrate calculator web app using Selenium and Python.</p>
+      <p>Framework used: <strong>Pytest</strong></p>
+      <p><strong>GitHub Actions</strong> pipeline is also set up for this project.</p>
+      <a href="https://github.com/Jupinder14/selenium-pytest" class="btn" target="_blank">View on GitHub</a>
+    </div>
+  </div>
+
+  <div id="modal5" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal5')">&times;</span>
+      <h2>Load testing using K6 (Load Impact)</h2>
+      <p>This project contains load tests for a public api using K6 tool with JavaScript.</p>
+      <a href="https://github.com/Jupinder14/k6-load-tests" class="btn" target="_blank">View on GitHub</a>
+    </div>
+  </div>
+
 </section>
+
 
 <section class="contact" id="contact">
   <div class="container" data-aos="fade-left">
     <h2>Contact Me</h2>
-    <p>Email: your.email@example.com</p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">yourprofile</a></p>
-    <p>GitHub: <a href="https://github.com/yourgithub" target="_blank">yourgithub</a></p>
+    <p>Email: jupinder.singh25@gmail.com</p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/jupinder-s-t/" target="_blank">https://www.linkedin.com/in/jupinder-s-t/</a></p>
+    <p>GitHub: <a href="https://github.com/Jupinder14" target="_blank">https://github.com/Jupinder14</a></p>
   </div>
 </section>
 
@@ -79,6 +139,25 @@
 
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script src="script.js"></script>
+
+<script>
+  function openModal(id) {
+    document.getElementById(id).style.display = 'block';
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+
+  // Close modal when clicking outside content
+  window.onclick = function(event) {
+    document.querySelectorAll(".modal").forEach(modal => {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    });
+  };
+</script>
 
 </body>
 </html>
