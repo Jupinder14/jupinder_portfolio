@@ -1,30 +1,21 @@
-name: Deploy to GitHub Pages
+name: Deploy Website to GitHub Pages
 
 on:
   push:
-    branches:
-      - main  # or 'master' if your branch is named master
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+    branches: [ "main" ]
+  workflow_dispatch:
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: './'  # This is where your index.html is (root directory)
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+        uses: peaceiris/actions-gh-pages@v2
+        with:
+          github_token: ${{ secrets.ACCESS_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./
